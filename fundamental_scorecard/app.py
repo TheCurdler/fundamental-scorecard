@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 st.title("Fundamental Scorecard + ML")
 
 # Load CSV
-df = pd.read_csv("raw_data.csv")
+df = pd.read_csv("fundamental_scorecard/raw_data.csv")
 
 # Remove Google Sheets junk column
 df = df.loc[:, ~df.columns.str.contains("Unnamed")]
@@ -63,3 +63,4 @@ company = st.selectbox("Select Company", df["Company"])
 
 st.subheader("Selected Company Details")
 st.dataframe(df[df["Company"] == company])
+
